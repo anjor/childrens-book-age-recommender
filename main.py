@@ -3,7 +3,9 @@ from fasthtml.common import *
 from fasthtml.components import Zero_md
 from dotenv import load_dotenv
 from openai import OpenAI
+import logging
 
+logger = logging.getLogger(__name__)
 css = Style(':root {--pico-font-size:90%,--pico-font-family: Pacifico, cursive;}')
 app = FastHTML(hdrs=(picolink, css))
 load_dotenv()
@@ -44,6 +46,7 @@ def home():
 
 @app.post("/")
 def age(title:str):
+    logger.info(f"Recommending Age for {title}")
     if title.lower() in recommendations:
         return recommendations.get(title)
 
