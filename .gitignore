@@ -1,0 +1,8 @@
+.sesskey
+__pycache__
+
+
+.venv
+pyrightconfig.json
+
+.env
