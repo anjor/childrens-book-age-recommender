@@ -4,7 +4,8 @@ from fasthtml.components import Zero_md
 from dotenv import load_dotenv
 from openai import OpenAI
 
-app = FastHTML()
+css = Style(':root {--pico-font-size:90%,--pico-font-family: Pacifico, cursive;}')
+app = FastHTML(hdrs=(picolink, css))
 load_dotenv()
 
 base_url = "https://api.crosshatch.app/v1"
@@ -30,6 +31,7 @@ def BookTitleInput():
     return Card(
         Input(name="title", id="new-title", placeholder="Enter a book title",
         cls="input input-bordered w-full", hx_swap_oob='true'),
+        Button("Submit")
     )
 
 @app.get("/")
