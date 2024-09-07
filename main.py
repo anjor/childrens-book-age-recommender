@@ -58,7 +58,6 @@ def age(title:str):
     content.strip('`')
     if content.startswith('html'):
         content = content[4:].strip()
-    print(content)
 
     # add to cache
     recommendations[title] = content
