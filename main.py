@@ -69,7 +69,3 @@ def age(title:str):
 @app.post("/clear")
 def clear():
     return ""
-
-
-if __name__ == "__main__":
-    serve()
